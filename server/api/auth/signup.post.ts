@@ -1,13 +1,11 @@
 import SignupSchema from "~/schemas/Signup.schema";
 import { User } from "~/server/models/User";
-
-import { Validator } from "#nuxt-server-utils";
 import { Board } from "~/server/models/Board";
 import { List } from "~/server/models/List";
+import { useValidatedBody } from "h3-zod";
 
 export default defineEventHandler(async (event) => {
-  const data = await readBody(event);
-  Validator.validateSchema(SignupSchema, data);
+  const data = await useValidatedBody(event, SignupSchema);
   const user = await User.create(data);
 
   // Create a board for the user
