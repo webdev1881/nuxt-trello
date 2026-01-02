@@ -6,7 +6,8 @@
       "Bash(test:*)",
       "Bash(docker run:*)",
       "Bash(node -e:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }
