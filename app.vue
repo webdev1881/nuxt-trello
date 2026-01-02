@@ -4,7 +4,6 @@
   <div>
     <NuxtPage />
     <UNotifications />
-    <SubscribeModal />
   </div>
 </template>
 

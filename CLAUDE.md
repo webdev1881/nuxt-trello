@@ -13,16 +13,16 @@ Nuxt Trello (nrello) is a full-stack SaaS task management application built with
 pnpm install
 
 # Start development server (runs on http://localhost:3000)
-pnpm run dev
+npm run dev
 
 # Build for production
-pnpm run build
+npm run build
 
 # Preview production build
-pnpm run preview
+npm run preview
 
 # Generate static site
-pnpm run generate
+npm run generate
 ```
 
 ## Environment Configuration

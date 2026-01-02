@@ -7,7 +7,16 @@
       "Bash(docker run:*)",
       "Bash(node -e:*)",
       "Bash(npm install:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(pnpm install:*)",
+      "Bash(mongosh:*)",
+      "Bash(node .nuxt/dev/index.mjs)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(docker:*)",
+      "Bash(ss:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)"
     ]
   }
 }

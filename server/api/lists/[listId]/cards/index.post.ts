@@ -1,14 +1,12 @@
-import { Validator } from "#nuxt-server-utils";
+import { zh } from "h3-zod";
 import CardSchema from "~/schemas/Card.schema";
 import { Card } from "~/server/models/Card";
 import { List } from "~/server/models/List";
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event);
+  const body = await zh.useValidatedBody(event, CardSchema);
   const user = event.context.user;
   const listId = getRouterParam(event, "listId");
-
-  Validator.validateSchema(CardSchema, body);
 
   const card = await Card.create({
     ...body,
