@@ -1,0 +1,92 @@
+{
+  "auth": {
+    "signin": {
+      "title": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "button": "Sign In",
+      "noAccount": "Don't have an account?",
+      "signup": "Sign Up",
+      "error": "Invalid credentials"
+    },
+    "signup": {
+      "title": "Sign Up",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "button": "Sign Up",
+      "hasAccount": "Already have an account?",
+      "signin": "Sign In",
+      "success": "Registration successful",
+      "error": "Registration error"
+    },
+    "signout": "Sign Out"
+  },
+  "board": {
+    "title": "Boards",
+    "create": "Create Board",
+    "new": "New Board",
+    "name": "Board Name",
+    "description": "Description",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete Board",
+    "edit": "Edit Board",
+    "untitled": "Untitled",
+    "selectCover": "Select Cover",
+    "noCover": "No Cover"
+  },
+  "list": {
+    "title": "List",
+    "create": "Create List",
+    "new": "New List",
+    "name": "List Name",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete List",
+    "edit": "Edit List",
+    "addCard": "Add Card"
+  },
+  "card": {
+    "title": "Card",
+    "create": "Create Card",
+    "new": "New Card",
+    "name": "Card Name",
+    "description": "Description",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete Card",
+    "edit": "Edit Card",
+    "details": "Card Details"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "close": "Close",
+    "back": "Back",
+    "confirm": "Confirm",
+    "actions": "Actions"
+  },
+  "navigation": {
+    "home": "Home",
+    "boards": "Boards",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "menu": {
+    "profile": "Profile",
+    "signout": "Sign Out",
+    "signedInAs": "Signed in as"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "notFound": "Not Found",
+    "unauthorized": "Unauthorized",
+    "serverError": "Server Error"
+  }
+}

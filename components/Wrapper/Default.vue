@@ -1,17 +1,19 @@
 <script lang="ts" setup>
 const { data, signOut } = useAuth();
 
-const dropdownItems = ref([
+const { t } = useI18n();
+
+const dropdownItems = computed(() => [
   [
     {
-      label: "Profile",
+      label: t('menu.profile'),
       slot: "profile",
       disabled: true,
     },
   ],
   [
     {
-      label: "Sign out",
+      label: t('menu.signout'),
       icon: "i-heroicons-arrow-left-on-rectangle",
       click: handleSignout,
     },
@@ -38,7 +40,7 @@ async function handleSignout() {
 
               <template #profile>
                 <div class="text-left">
-                  <p>Signed in as</p>
+                  <p>{{ $t('menu.signedInAs') }}</p>
                   <p class="truncate font-medium text-gray-900 dark:text-white">
                     {{ data?.user?.email }}
                   </p>

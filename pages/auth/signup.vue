@@ -3,8 +3,10 @@ import type { FormSubmitEvent } from "@nuxt/ui/dist/runtime/types";
 import type { z } from "h3-zod";
 import SignupSchema from "~/schemas/Signup.schema";
 
+const { t } = useI18n();
+
 useHead({
-  title: "Signup",
+  title: t('auth.signup.title'),
 });
 
 const formState = ref({
@@ -26,9 +28,8 @@ async function handleSubmit(
       body: event.data,
     });
     useToast().add({
-      title: "Account created",
-      description:
-        "Your account has been created successfully, Redirecting you to the sign in page",
+      title: t('auth.signup.success'),
+      description: t('auth.signup.success'),
     });
     await useRouter().push({
       name: "auth-signin",
@@ -41,32 +42,32 @@ async function handleSubmit(
 }
 </script>
 <template>
-  <WrapperAuth title="Create an account for free">
+  <WrapperAuth :title="$t('auth.signup.title')">
     <template #header>
-      <span class="text-sm mr-px">Already have an account?</span>
-      <NuxtLink to="/auth/signin" class="text-primary-500"> Sign In </NuxtLink>
+      <span class="text-sm mr-px">{{ $t('auth.signup.hasAccount') }}</span>
+      <NuxtLink to="/auth/signin" class="text-primary-500"> {{ $t('auth.signup.signin') }} </NuxtLink>
     </template>
 
     <UForm :state="formState" :schema="SignupSchema" @submit="handleSubmit">
-      <UFormGroup class="mb-4" name="name" label="Name">
+      <UFormGroup class="mb-4" name="name" :label="$t('auth.signup.name')">
         <UInput v-model="formState.name" type="text" placeholder="John Doe" />
       </UFormGroup>
 
-      <UFormGroup class="mb-4" name="email" label="Email">
+      <UFormGroup class="mb-4" name="email" :label="$t('auth.signup.email')">
         <UInput
           v-model="formState.email"
           type="email"
           placeholder="john@email.com"
         />
       </UFormGroup>
-      <UFormGroup class="mb-4" name="password" label="Password">
+      <UFormGroup class="mb-4" name="password" :label="$t('auth.signup.password')">
         <UInput
           v-model="formState.password"
           type="password"
           placeholder="********"
         />
       </UFormGroup>
-      <UFormGroup class="mb-4" name="passwordConfirm" label="Confirm Password">
+      <UFormGroup class="mb-4" name="passwordConfirm" :label="$t('auth.signup.password')">
         <UInput
           v-model="formState.passwordConfirm"
           type="password"
@@ -75,7 +76,7 @@ async function handleSubmit(
       </UFormGroup>
       <UFormGroup>
         <UButton :loading="isLoading" type="submit" color="primary" block>
-          Sign Up
+          {{ $t('auth.signup.button') }}
         </UButton>
       </UFormGroup>
     </UForm>
