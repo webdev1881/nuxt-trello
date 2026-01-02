@@ -33,6 +33,6 @@ export default defineNuxtConfig({
   },
   ui: {},
   nuxtServerUtils: {
-    mongodbUri: process.env.NEXTAUTH_URL,
+    mongodbUri: process.env.MONGODB_URI,
   },
 });
