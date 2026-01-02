@@ -3,7 +3,10 @@
     "allow": [
       "Bash(pnpm run dev)",
       "Bash(npm run dev:*)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(docker run:*)",
+      "Bash(node -e:*)",
+      "Bash(npm install:*)"
     ]
   }
 }

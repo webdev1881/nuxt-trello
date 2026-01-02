@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxt/ui",
-    "nuxt-server-utils",
     "@sidebase/nuxt-auth",
     "@nuxt/image",
   ],
@@ -32,7 +31,4 @@ export default defineNuxtConfig({
     preference: "light",
   },
   ui: {},
-  nuxtServerUtils: {
-    mongodbUri: process.env.MONGODB_URI,
-  },
 });
