@@ -45,15 +45,17 @@ async function handleSubmit(
       watch: false,
     });
 
-    if (error.value) {
-      if (error.value.statusCode === 403) {
-        useSubscription().showSubscriptionModal({
-          title: "Multiple boards is a Premium Feature",
-          description:
-            "You can create only one board in free plan. Please upgrade to premium to create more boards.",
-        });
-      }
-    }
+    // SUBSCRIPTION_DISABLED: Subscription functionality commented out
+    // To re-enable: uncomment this block and ensure useSubscription composable exists
+    // if (error.value) {
+    //   if (error.value.statusCode === 403) {
+    //     useSubscription().showSubscriptionModal({
+    //       title: "Multiple boards is a Premium Feature",
+    //       description:
+    //         "You can create only one board in free plan. Please upgrade to premium to create more boards.",
+    //     });
+    //   }
+    // }
 
     porps.onCreate?.(data);
   } catch (e) {

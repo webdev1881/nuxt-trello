@@ -16,7 +16,14 @@
       "Bash(docker:*)",
       "Bash(ss:*)",
       "Bash(netstat:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(where:*)",
+      "Bash(sc query:*)",
+      "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe\" ps)",
+      "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe\" run -d -p 27017:27017 --name mongodb mongo:latest)",
+      "Bash(\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe\" pull mongo:latest)",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.exe'' run -d -p 27017:27017 --name mongodb mongo:latest\")",
+      "Bash(export PATH=\"/c/Program Files/Docker/Docker/resources/bin:$PATH\")"
     ]
   }
 }
