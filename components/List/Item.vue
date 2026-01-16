@@ -3,6 +3,8 @@ import draggable from "vuedraggable";
 import type { CardDocument } from "~/server/models/Card";
 import type { ListDocument } from "~/server/models/List";
 
+const { t } = useI18n();
+
 const props = defineProps<{
   list: ListDocument;
   boardId: string;
@@ -14,17 +16,17 @@ const selectedCard = ref<CardDocument | undefined>();
 
 const refreshBoard = inject("refresh-board") as () => void;
 
-const listActions = ref([
+const listActions = computed(() => [
   [
     {
-      label: "Add card",
+      label: t('list.addCard'),
       icon: "i-heroicons-plus-circle",
       click: () => {
         showCreateCard.value = true;
       },
     },
     {
-      label: "Delete list",
+      label: t('list.delete'),
       icon: "i-heroicons-trash",
       click: () => {
         destroy(props.list._id, refreshBoard);
@@ -127,7 +129,7 @@ watch(showCreateCard, (value) => {
         trailing
         variant="ghost"
         @click="showCreateCard = true"
-        >Add card</UButton
+        >{{ $t('list.addCard') }}</UButton
       >
     </div>
     <!-- ./ List Footer  -->
@@ -135,7 +137,7 @@ watch(showCreateCard, (value) => {
     <Teleport to="body">
       <UModal v-model="showCreateCard">
         <SlideoverHeader
-          :title="selectedCard ? 'Update card' : 'Create a card'"
+          :title="selectedCard ? $t('card.edit') : $t('card.create')"
           :on-click="() => (showCreateCard = false)"
         ></SlideoverHeader>
         <div class="p-4">
