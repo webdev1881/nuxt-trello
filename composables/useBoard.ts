@@ -1,16 +1,18 @@
 export const useBoard = () => {
+  const { t } = useI18n();
+
   async function destroy(id: string, onDestroy?: () => void) {
     try {
       useToast().add({
-        title: "Delete board",
-        description: "Are you sure you want to delete this board?",
+        title: t('board.delete'),
+        description: t('board.deleteConfirm'),
         actions: [
           {
-            label: "Canel",
+            label: t('common.cancel'),
             click: () => {},
           },
           {
-            label: "Yes",
+            label: t('common.yes'),
             color: "red",
             click: async () => {
               await useFetch(`/api/boards/${id}`, {
@@ -25,8 +27,8 @@ export const useBoard = () => {
       });
     } catch (e: any) {
       useToast().add({
-        title: "Error",
-        description: e.message || "Something went wrong",
+        title: t('common.error'),
+        description: e.message || t('errors.generic'),
       });
     }
   }

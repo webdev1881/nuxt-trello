@@ -55,8 +55,8 @@ async function handleCardChange(e: any) {
     });
   } catch (e: any) {
     useToast().add({
-      title: "Error",
-      description: e.message || "Something went wrong",
+      title: t('common.error'),
+      description: e.message || t('errors.generic'),
     });
   }
 }

@@ -4,6 +4,8 @@ import { z } from "h3-zod";
 import CardSchema from "~/schemas/Card.schema";
 import type { CardDocument } from "~/server/models/Card";
 
+const { t } = useI18n();
+
 interface Props {
   type: "create" | "update";
   listId: string;
@@ -50,8 +52,8 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof CardSchema>>) {
     props.onCreate?.();
   } catch (e: any) {
     useToast().add({
-      title: "Error",
-      description: e.message || "Something went wrong",
+      title: t('common.error'),
+      description: e.message || t('errors.generic'),
     });
   } finally {
     isLoading.value = false;
@@ -71,8 +73,8 @@ async function handleDelete() {
     props.onUpdate?.();
   } catch (e: any) {
     useToast().add({
-      title: "Error",
-      description: e.message || "Something went wrong",
+      title: t('common.error'),
+      description: e.message || t('errors.generic'),
     });
   } finally {
     isLoading.value = false;

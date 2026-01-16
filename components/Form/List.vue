@@ -4,6 +4,8 @@ import type { ListDocument } from "~/server/models/List";
 import { z } from "zod";
 import ListSchema from "~/schemas/List.schema";
 
+const { t } = useI18n();
+
 interface Props {
   type: "create" | "update";
   boardId: string;
@@ -47,8 +49,8 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof ListSchema>>) {
       });
       useToast().add({
         color: "green",
-        title: "Success",
-        description: "List updated successfully",
+        title: t('common.success'),
+        description: t('list.updated'),
       });
       props.onCreate?.();
       return;
@@ -61,15 +63,15 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof ListSchema>>) {
 
     useToast().add({
       color: "green",
-      title: "Success",
-      description: "List created successfully",
+      title: t('common.success'),
+      description: t('list.created'),
     });
     props.onCreate?.();
   } catch (e: any) {
     useToast().add({
       color: "red",
-      title: "Error",
-      description: e.message || "Something went wrong",
+      title: t('common.error'),
+      description: e.message || t('errors.generic'),
     });
   } finally {
     isLoading.value = false;
