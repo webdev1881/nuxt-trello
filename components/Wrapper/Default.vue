@@ -34,6 +34,7 @@ async function handleSignout() {
           <div class="inline-flex justify-end gap-4 items-center">
             <slot name="actions"></slot>
 
+            <LocaleSwitcher />
             <ColorSwitcher />
             <UDropdown :items="dropdownItems">
               <UIcon name="i-heroicons-user-circle" class="w-6 h-6" />

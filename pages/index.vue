@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 import type { BoardDocument } from "~/server/models/Board";
 
+const { t } = useI18n();
+
 definePageMeta({
   middleware: "auth",
 });
 
 useHead({
-  title: "Boards",
+  title: t('board.title'),
 });
 
 const showCreateBoard = ref(false);
@@ -32,18 +34,18 @@ watchEffect(() => {
 </script>
 <template>
   <WrapperDefault>
-    <h1 class="tex-3xl font-semibold">Boards</h1>
+    <h1 class="tex-3xl font-semibold">{{ $t('board.title') }}</h1>
 
     <template #actions>
       <UButton size="xs" @click="showCreateBoard = !showCreateBoard"
-        >Create new board</UButton
+        >{{ $t('board.create') }}</UButton
       >
     </template>
 
     <!-- Sidesheet  -->
     <USlideover v-model="showCreateBoard">
       <SlideoverHeader
-        :title="selectedBoard ? 'Update board' : 'Create board'"
+        :title="selectedBoard ? $t('board.edit') : $t('board.create')"
         :on-click="() => (showCreateBoard = false)"
       ></SlideoverHeader>
 

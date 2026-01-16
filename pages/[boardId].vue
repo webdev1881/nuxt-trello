@@ -40,7 +40,7 @@ const lists = computed(() => data.value?.lists as ListDocument[]);
     }"
   >
     <template #actions>
-      <UButton @click="showCreateList = true" size="xs">Create a list</UButton>
+      <UButton @click="showCreateList = true" size="xs">{{ $t('list.create') }}</UButton>
     </template>
 
     <h1 class="tex-3xl font-semibold mb-4 inline-block">
@@ -51,7 +51,7 @@ const lists = computed(() => data.value?.lists as ListDocument[]);
 
     <USlideover v-model="showCreateList">
       <SlideoverHeader
-        title="Create list"
+        :title="$t('list.create')"
         :on-click="() => (showCreateList = false)"
       ></SlideoverHeader>
 

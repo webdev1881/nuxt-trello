@@ -81,16 +81,16 @@ watchEffect(() => {
     class="p-4"
     @submit="handleSubmit"
   >
-    <UFormGroup class="mb-4" name="name" label="Board Name">
-      <UInput v-model="formState.name" type="text" placeholder="Board name" />
+    <UFormGroup class="mb-4" name="name" :label="$t('board.name')">
+      <UInput v-model="formState.name" type="text" :placeholder="$t('board.name')" />
     </UFormGroup>
 
-    <UFormGroup class="mb-4" name="coverImage" label="Select cover image">
+    <UFormGroup class="mb-4" name="coverImage" :label="$t('board.selectCover')">
       <ImagePicker v-model="formState.coverImage" />
     </UFormGroup>
 
     <UButton type="submit" color="primary" block :loading="isLoading">
-      {{ type === "create" ? "Create board" : "Update board" }}
+      {{ type === "create" ? $t('board.create') : $t('board.edit') }}
     </UButton>
   </UForm>
 </template>

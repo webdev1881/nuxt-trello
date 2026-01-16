@@ -16,7 +16,24 @@
       "Bash(docker:*)",
       "Bash(ss:*)",
       "Bash(netstat:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(node ./node_modules/nuxt/bin/nuxt.mjs dev:*)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm --version:*)",
+      "Bash(npm:*)",
+      "Bash(node --version:*)",
+      "Bash(\"/c/Program Files/nodejs/npm\" install)",
+      "Bash(node /c/Program\\\\ Files/nodejs/node_modules/npm/bin/npm-cli.js install:*)",
+      "Bash(node /c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js install @oxc-parser/binding-win32-x64-msvc --save-optional)",
+      "Bash(node /c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js run dev:*)",
+      "Bash(node /c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js install @oxc-parser/binding-win32-x64-msvc)",
+      "Bash(node /c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js install @oxc-parser/binding-win32-x64-msvc --legacy-peer-deps)",
+      "Bash(node /c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js exec pnpm install:*)",
+      "Bash(node:*)",
+      "Bash(where:*)",
+      "Bash(winget:*)",
+      "Bash(net start:*)",
+      "Bash(sc query:*)"
     ]
   }
 }

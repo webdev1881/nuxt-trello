@@ -93,11 +93,11 @@ watchEffect(() => {
 </script>
 <template>
   <UForm :state="formState" :schema="CardSchema" @submit="handleSubmit">
-    <UFormGroup class="mb-4" name="title" label="Title">
-      <UInput type="text" v-model="formState.title" autofocus />
+    <UFormGroup class="mb-4" name="title" :label="$t('card.name')">
+      <UInput type="text" v-model="formState.title" autofocus :placeholder="$t('card.name')" />
     </UFormGroup>
 
-    <UFormGroup class="mb-4" name="description" label="Description">
+    <UFormGroup class="mb-4" name="description" :label="$t('card.description')">
       <ClientOnly>
         <QuillEditor
           v-model:content="formState.description"
@@ -120,7 +120,7 @@ watchEffect(() => {
       >
       </UButton>
       <UButton type="submit" :loading="isLoading" :block="type === 'create'">
-        {{ type === "create" ? "Create card" : "Update card" }}
+        {{ type === "create" ? $t('card.create') : $t('card.edit') }}
       </UButton>
     </div>
   </UForm>

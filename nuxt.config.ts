@@ -5,7 +5,21 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@sidebase/nuxt-auth",
     "@nuxt/image",
+    "@nuxtjs/i18n",
   ],
+
+  i18n: {
+    locales: [
+      { code: "uk", file: "uk.json", name: "Українська" },
+      { code: "en", file: "en.json", name: "English" },
+    ],
+    defaultLocale: "uk",
+    strategy: "no_prefix",
+    lazy: true,
+    bundle: {
+      fullInstall: false,
+    },
+  },
 
   runtimeConfig: {
     auth: {

@@ -78,11 +78,11 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof ListSchema>>) {
 </script>
 <template>
   <UForm :state="formState" :schema="ListSchema" @submit="handleSubmit">
-    <UFormGroup name="name" label="List Name" class="mb-4">
-      <UInput type="text" name="name" v-model="formState.name" />
+    <UFormGroup name="name" :label="$t('list.name')" class="mb-4">
+      <UInput type="text" name="name" v-model="formState.name" :placeholder="$t('list.name')" />
     </UFormGroup>
     <UButton type="submit" :loading="isLoading" color="primary" block>
-      {{ type === "create" ? "Create list" : "Update list" }}
+      {{ type === "create" ? $t('list.create') : $t('list.edit') }}
     </UButton>
   </UForm>
 </template>

@@ -30,5 +30,8 @@
     "bcryptjs": "^2.4.3",
     "next-auth": "4.21.1",
     "vuedraggable": "^4.1.0"
+  },
+  "optionalDependencies": {
+    "@oxc-parser/binding-win32-x64-msvc": "^0.108.0"
   }
 }

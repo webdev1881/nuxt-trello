@@ -7,6 +7,10 @@ defineProps({
 </script>
 <template>
   <div class="grid lg:grid-cols-2 h-screen bg-gray-100 dark:bg-gray-950">
+    <div class="absolute top-4 right-4 flex gap-2">
+      <LocaleSwitcher />
+      <ColorSwitcher />
+    </div>
     <div
       class="left place-self-center w-full px-8 md:px-16 lg:px-24 xl:px-36 2xl:px-52"
     >
