@@ -3,6 +3,8 @@ import type { FormSubmitEvent } from "@nuxt/ui/dist/runtime/types";
 import type { z } from "h3-zod";
 import SignupSchema from "~/schemas/Signup.schema";
 
+const { $t } = useNuxtApp()
+
 useHead({
   title: "Signup",
 });
@@ -41,32 +43,32 @@ async function handleSubmit(
 }
 </script>
 <template>
-  <WrapperAuth title="Create an account for free">
+  <WrapperAuth :title="$t('createYourAccount')">
     <template #header>
-      <span class="text-sm mr-px">Already have an account?</span>
-      <NuxtLink to="/auth/signin" class="text-primary-500"> Sign In </NuxtLink>
+      <span class="text-sm mr-px">{{ $t('alreadyHaveAccount') }}</span>
+      <NuxtLink to="/auth/signin" class="text-primary-500"> {{ $t('signIn') }} </NuxtLink>
     </template>
 
     <UForm :state="formState" :schema="SignupSchema" @submit="handleSubmit">
-      <UFormGroup class="mb-4" name="name" label="Name">
+      <UFormGroup class="mb-4" name="name" :label="$t('name')">
         <UInput v-model="formState.name" type="text" placeholder="John Doe" />
       </UFormGroup>
 
-      <UFormGroup class="mb-4" name="email" label="Email">
+      <UFormGroup class="mb-4" name="email" :label="$t('email')">
         <UInput
           v-model="formState.email"
           type="email"
           placeholder="john@email.com"
         />
       </UFormGroup>
-      <UFormGroup class="mb-4" name="password" label="Password">
+      <UFormGroup class="mb-4" name="password" :label="$t('password')">
         <UInput
           v-model="formState.password"
           type="password"
           placeholder="********"
         />
       </UFormGroup>
-      <UFormGroup class="mb-4" name="passwordConfirm" label="Confirm Password">
+      <UFormGroup class="mb-4" name="passwordConfirm" :label="$t('password')">
         <UInput
           v-model="formState.passwordConfirm"
           type="password"
@@ -75,7 +77,7 @@ async function handleSubmit(
       </UFormGroup>
       <UFormGroup>
         <UButton :loading="isLoading" type="submit" color="primary" block>
-          Sign Up
+          {{ $t('signUp') }}
         </UButton>
       </UFormGroup>
     </UForm>

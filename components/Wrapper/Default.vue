@@ -50,12 +50,16 @@ async function handleSignout() {
       </UContainer>
     </header>
 
-    <main class="my-4">
+    <main class="rt_m my-4">
       <UContainer>
-        <slot />
+        <slot class="rt_m" />
       </UContainer>
     </main>
   </div>
 </template>
 
-<style></style>
+<style>
+  .rt_m {
+    user-select: none;
+  }
+</style>

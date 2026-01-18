@@ -10,6 +10,9 @@ defineProps({
     <div
       class="left place-self-center w-full px-8 md:px-16 lg:px-24 xl:px-36 2xl:px-52"
     >
+      <div class="flex justify-end mb-4">
+        <LocaleSwitcher />
+      </div>
       <div class="header text-center mb-6">
         <div class="flex justify-center my-4"><Logo /></div>
         <h1 class="text-xl font-bold mb-px">{{ title }}</h1>
@@ -25,7 +28,7 @@ defineProps({
 
 <style>
 .right {
-  background: linear-gradient(-45deg, #22c55e, #10b981, #84cc16, #23d5ab);
+  background: linear-gradient(-45deg, #2232c5, #1021b9, #1616cc, #2341d5);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }

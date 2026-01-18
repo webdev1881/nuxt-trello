@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { useSignin } from "~/composables/useSignin";
 
+const { $t } = useNuxtApp()
+
 useHead({
   title: "Signin",
 });
@@ -8,21 +10,22 @@ useHead({
 const { formState, isLoading, validationSchema, handleSubmit } = useSignin();
 </script>
 <template>
-  <WrapperAuth title="Sign In to your account">
+  <WrapperAuth :title="$t('welcomeBack')">
     <template #header>
-      <span class="text-sm mr-px">Don't have an account?</span>
-      <NuxtLink to="/auth/signup" class="text-primary-500"> Sign Up </NuxtLink>
+      <span class="text-sm mr-px">{{ $t('dontHaveAccount') }}</span>
+      <span>  &nbsp;</span>
+      <NuxtLink to="/auth/signup" class="text-primary-500"> {{ $t('signUp') }} </NuxtLink>
     </template>
 
     <UForm :state="formState" :schema="validationSchema" @submit="handleSubmit">
-      <UFormGroup class="mb-4" name="email" label="Email">
+      <UFormGroup class="mb-4" name="email" :label="$t('email')">
         <UInput
           v-model="formState.email"
           type="email"
           placeholder="john@email.com"
         />
       </UFormGroup>
-      <UFormGroup class="mb-4" name="password" label="Password">
+      <UFormGroup class="mb-4" name="password" :label="$t('password')">
         <UInput
           v-model="formState.password"
           type="password"
@@ -31,7 +34,7 @@ const { formState, isLoading, validationSchema, handleSubmit } = useSignin();
       </UFormGroup>
       <UFormGroup>
         <UButton :loading="isLoading" type="submit" color="primary" block>
-          Sign In
+          {{ $t('signIn') }}
         </UButton>
       </UFormGroup>
     </UForm>

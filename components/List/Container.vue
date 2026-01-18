@@ -55,5 +55,6 @@ async function handleSort(e: any) {
 .list .sortable-chosen {
   overflow: hidden;
   opacity: 1 !important;
+  user-select: none;
 }
 </style>
