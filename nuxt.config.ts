@@ -26,5 +26,9 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "light",
   },
-  ui: {},
+  ui: {
+    theme: {
+      colors: ['smk']
+    }
+  },
 });

@@ -28,9 +28,8 @@ async function handleSubmit(
       body: event.data,
     });
     useToast().add({
-      title: "Account created",
-      description:
-        "Your account has been created successfully, Redirecting you to the sign in page",
+      title: $t('accountCreated'),
+      description: $t('accountCreatedDescription'),
     });
     await useRouter().push({
       name: "auth-signin",

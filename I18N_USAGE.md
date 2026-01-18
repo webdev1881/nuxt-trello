@@ -60,6 +60,8 @@ console.log($locale.value) // 'uk' или 'en'
 - `name` - Ім'я / Name
 - `alreadyHaveAccount` - Вже є акаунт? / Already have an account?
 - `dontHaveAccount` - Немає акаунту? / Don't have an account?
+- `welcomeBack` - Ласкаво просимо назад! / Welcome Back!
+- `createYourAccount` - Створіть свій акаунт / Create Your Account
 
 ### Доски
 - `board` - Дошка / Board
@@ -69,6 +71,8 @@ console.log($locale.value) // 'uk' или 'en'
 - `deleteBoard` - Видалити дошку / Delete Board
 - `boardName` - Назва дошки / Board Name
 - `selectCoverImage` - Виберіть обкладинку / Select cover image
+- `noBoardsYet` - У вас ще немає дошок / You don't have any boards yet
+- `createYourFirstBoard` - Створіть свою першу дошку / Create your first board
 
 ### Списки
 - `list` - Список / List
@@ -78,6 +82,7 @@ console.log($locale.value) // 'uk' или 'en'
 - `deleteList` - Видалити список / Delete List
 - `listName` - Назва списку / List Name
 - `addList` - Додати список / Add List
+- `addAnotherList` - Додати ще один список / Add another list
 
 ### Картки
 - `card` - Картка / Card
@@ -88,6 +93,7 @@ console.log($locale.value) // 'uk' или 'en'
 - `cardTitle` - Назва картки / Card Title
 - `cardDescription` - Опис картки / Card Description
 - `addCard` - Додати картку / Add Card
+- `addAnotherCard` - Додати ще одну картку / Add another card
 
 ### Общие
 - `save` - Зберегти / Save
@@ -99,10 +105,48 @@ console.log($locale.value) // 'uk' или 'en'
 - `close` - Закрити / Close
 - `loading` - Завантаження... / Loading...
 - `search` - Пошук / Search
+- `actions` - Дії / Actions
+- `confirm` - Підтвердити / Confirm
 
-### Сообщения
-- `welcomeBack` - Ласкаво просимо назад! / Welcome Back!
-- `createYourAccount` - Створіть свій акаунт / Create Your Account
+### Toast сообщения
+- `accountCreated` - Акаунт створено / Account created
+- `accountCreatedDescription` - Ваш акаунт успішно створено... / Your account has been created...
+- `boardCreated` - Дошку створено / Board created
+- `boardCreatedDescription` - Ваша дошка була успішно створена / Your board has been created successfully
+- `boardUpdated` - Дошку оновлено / Board updated
+- `boardUpdatedDescription` - Ваша дошка була успішно оновлена / Your board has been updated successfully
+- `boardDeleted` - Дошку видалено / Board deleted
+- `boardDeletedDescription` - Дошка була успішно видалена / Board has been deleted successfully
+- `listCreated` - Список створено / List created
+- `listCreatedDescription` - Список було успішно створено / List has been created successfully
+- `listUpdated` - Список оновлено / List updated
+- `listUpdatedDescription` - Список було успішно оновлено / List has been updated successfully
+- `listDeleted` - Список видалено / List deleted
+- `listDeletedDescription` - Список було успішно видалено / List has been deleted successfully
+- `cardCreated` - Картку створено / Card created
+- `cardCreatedDescription` - Картку було успішно створено / Card has been created successfully
+- `cardUpdated` - Картку оновлено / Card updated
+- `cardUpdatedDescription` - Картку було успішно оновлено / Card has been updated successfully
+- `cardDeleted` - Картку видалено / Card deleted
+- `cardDeletedDescription` - Картку було успішно видалено / Card has been deleted successfully
+- `error` - Помилка / Error
+- `success` - Успіх / Success
+- `warning` - Попередження / Warning
+- `info` - Інформація / Information
+
+### Ошибки
+- `somethingWentWrong` - Щось пішло не так / Something went wrong
+- `pleaseLogin` - Будь ласка, увійдіть в систему / Please login
+- `invalidCredentials` - Невірні облікові дані / Invalid credentials
+- `emailAlreadyExists` - Email вже існує / Email already exists
+- `requiredField` - Обов'язкове поле / Required field
+
+### Плейсхолдеры
+- `enterBoardName` - Введіть назву дошки / Enter board name
+- `enterListName` - Введіть назву списку / Enter list name
+- `enterCardTitle` - Введіть назву картки / Enter card title
+- `enterDescription` - Введіть опис / Enter description
+- `searchPlaceholder` - Почніть вводити для пошуку... / Start typing to search...
 
 ## Добавление новых переводов
 

@@ -2,6 +2,7 @@
 import draggable from "vuedraggable";
 import type { CardDocument } from "~/server/models/Card";
 import type { ListDocument } from "~/server/models/List";
+const { $t } = useNuxtApp()
 
 const props = defineProps<{
   list: ListDocument;
@@ -17,14 +18,14 @@ const refreshBoard = inject("refresh-board") as () => void;
 const listActions = ref([
   [
     {
-      label: "Add card",
+      label: $t('addList'),
       icon: "i-heroicons-plus-circle",
       click: () => {
         showCreateCard.value = true;
       },
     },
     {
-      label: "Delete list",
+      label: $t('deleteList'),
       icon: "i-heroicons-trash",
       click: () => {
         destroy(props.list._id, refreshBoard);
@@ -127,7 +128,7 @@ watch(showCreateCard, (value) => {
         trailing
         variant="ghost"
         @click="showCreateCard = true"
-        >Add card</UButton
+        >{{$t('addCard')}}</UButton
       >
     </div>
     <!-- ./ List Footer  -->
@@ -135,7 +136,7 @@ watch(showCreateCard, (value) => {
     <Teleport to="body">
       <UModal v-model="showCreateCard">
         <SlideoverHeader
-          :title="selectedCard ? 'Update card' : 'Create a card'"
+          :title="selectedCard ? $t('updateCard') : $t('createCard')"
           :on-click="() => (showCreateCard = false)"
         ></SlideoverHeader>
         <div class="p-4">

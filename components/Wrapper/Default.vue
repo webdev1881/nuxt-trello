@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { data, signOut } = useAuth();
-
+const { $t } = useNuxtApp()
 const dropdownItems = ref([
   [
     {
@@ -11,7 +11,7 @@ const dropdownItems = ref([
   ],
   [
     {
-      label: "Sign out",
+      label: $t('signOut'),
       icon: "i-heroicons-arrow-left-on-rectangle",
       click: handleSignout,
     },
@@ -38,7 +38,7 @@ async function handleSignout() {
 
               <template #profile>
                 <div class="text-left">
-                  <p>Signed in as</p>
+                  <!-- <p>{{$t('signed')}}</p> -->
                   <p class="truncate font-medium text-gray-900 dark:text-white">
                     {{ data?.user?.email }}
                   </p>

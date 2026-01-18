@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { BoardDocument } from "~/server/models/Board";
 import type { ListDocument } from "~/server/models/List";
-
+const { $t } = useNuxtApp()
 definePageMeta({
   middleware: "auth",
 });
@@ -40,7 +40,7 @@ const lists = computed(() => data.value?.lists as ListDocument[]);
     }"
   >
     <template #actions>
-      <UButton @click="showCreateList = true" size="xs">Create a list</UButton>
+      <UButton @click="showCreateList = true" size="xs">{{$t('createList')}}</UButton>
     </template>
 
     <h1 class="tex-3xl font-semibold mb-4 inline-block">

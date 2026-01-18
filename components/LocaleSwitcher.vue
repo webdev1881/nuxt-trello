@@ -6,9 +6,10 @@ const locales = [
   { value: 'en', label: 'English', flag: '🇬🇧', click: () => $setLocale('en') },
 ]
 
-const currentLocale = computed(() =>
-  locales.find(l => l.value === $locale.value) || locales[0]
-)
+const currentLocale = computed(() => {
+  if (!$locale || !$locale.value) return locales[0]
+  return locales.find(l => l.value === $locale.value) || locales[0]
+})
 
 const items = computed(() => [
   locales.map(locale => ({

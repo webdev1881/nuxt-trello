@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { BoardDocument } from "~/server/models/Board";
-
+const { $t } = useNuxtApp()
 definePageMeta({
   middleware: "auth",
 });
@@ -32,11 +32,11 @@ watchEffect(() => {
 </script>
 <template>
   <WrapperDefault>
-    <h1 class="tex-3xl font-semibold">Boards</h1>
+    <h1 class="tex-3xl font-semibold">{{ $t('boards') }}</h1>
 
     <template #actions>
       <UButton size="xs" @click="showCreateBoard = !showCreateBoard"
-        >Create new board</UButton
+        >{{ $t('createNewBoard') }}</UButton
       >
     </template>
 

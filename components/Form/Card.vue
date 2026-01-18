@@ -4,6 +4,8 @@ import { z } from "h3-zod";
 import CardSchema from "~/schemas/Card.schema";
 import type { CardDocument } from "~/server/models/Card";
 
+const { $t } = useNuxtApp()
+
 interface Props {
   type: "create" | "update";
   listId: string;
@@ -50,8 +52,8 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof CardSchema>>) {
     props.onCreate?.();
   } catch (e: any) {
     useToast().add({
-      title: "Error",
-      description: e.message || "Something went wrong",
+      title: $t('error'),
+      description: e.message || $t('somethingWentWrong'),
     });
   } finally {
     isLoading.value = false;
@@ -71,8 +73,8 @@ async function handleDelete() {
     props.onUpdate?.();
   } catch (e: any) {
     useToast().add({
-      title: "Error",
-      description: e.message || "Something went wrong",
+      title: $t('error'),
+      description: e.message || $t('somethingWentWrong'),
     });
   } finally {
     isLoading.value = false;
@@ -93,17 +95,18 @@ watchEffect(() => {
 </script>
 <template>
   <UForm :state="formState" :schema="CardSchema" @submit="handleSubmit">
-    <UFormGroup class="mb-4" name="title" label="Title">
-      <UInput type="text" v-model="formState.title" autofocus />
+    <UFormGroup class="mb-4" name="title" :label="$t('cardTitle')">
+      <UInput type="text" v-model="formState.title" autofocus :placeholder="$t('enterCardTitle')" />
     </UFormGroup>
 
-    <UFormGroup class="mb-4" name="description" label="Description">
+    <UFormGroup class="mb-4" name="description" :label="$t('cardDescription')">
       <ClientOnly>
         <QuillEditor
           v-model:content="formState.description"
           theme="snow"
           toolbar="minimal"
           content-type="html"
+          :placeholder="$t('enterDescription')"
         />
       </ClientOnly>
     </UFormGroup>
@@ -120,7 +123,7 @@ watchEffect(() => {
       >
       </UButton>
       <UButton type="submit" :loading="isLoading" :block="type === 'create'">
-        {{ type === "create" ? "Create card" : "Update card" }}
+        {{ type === "create" ? $t('createCard') : $t('updateCard') }}
       </UButton>
     </div>
   </UForm>

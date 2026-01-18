@@ -4,6 +4,8 @@ import type { ListDocument } from "~/server/models/List";
 import { z } from "zod";
 import ListSchema from "~/schemas/List.schema";
 
+const { $t } = useNuxtApp()
+
 interface Props {
   type: "create" | "update";
   boardId: string;
@@ -47,8 +49,8 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof ListSchema>>) {
       });
       useToast().add({
         color: "green",
-        title: "Success",
-        description: "List updated successfully",
+        title: $t('success'),
+        description: $t('listUpdatedDescription'),
       });
       props.onCreate?.();
       return;
@@ -61,15 +63,15 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof ListSchema>>) {
 
     useToast().add({
       color: "green",
-      title: "Success",
-      description: "List created successfully",
+      title: $t('success'),
+      description: $t('listCreatedDescription'),
     });
     props.onCreate?.();
   } catch (e: any) {
     useToast().add({
       color: "red",
-      title: "Error",
-      description: e.message || "Something went wrong",
+      title: $t('error'),
+      description: e.message || $t('somethingWentWrong'),
     });
   } finally {
     isLoading.value = false;
@@ -78,11 +80,11 @@ async function handleSubmit(e: FormSubmitEvent<z.output<typeof ListSchema>>) {
 </script>
 <template>
   <UForm :state="formState" :schema="ListSchema" @submit="handleSubmit">
-    <UFormGroup name="name" label="List Name" class="mb-4">
-      <UInput type="text" name="name" v-model="formState.name" />
+    <UFormGroup name="name" :label="$t('listName')" class="mb-4">
+      <UInput type="text" name="name" v-model="formState.name" :placeholder="$t('enterListName')" />
     </UFormGroup>
     <UButton type="submit" :loading="isLoading" color="primary" block>
-      {{ type === "create" ? "Create list" : "Update list" }}
+      {{ type === "create" ? $t('createList') : $t('updateList') }}
     </UButton>
   </UForm>
 </template>
